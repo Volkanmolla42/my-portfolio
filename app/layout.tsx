@@ -26,7 +26,7 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-XTYR19C60Q');
           `}
-        </Script>{" "}
+        </Script>
       </head>
       <body>{children}</body>
     </html>
