@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import "./style.css";
 const Hero = () => {
   return (
@@ -17,6 +18,13 @@ const Hero = () => {
           <div className="letter N">N</div>
         </div>
       </div>
+      <Image
+        src="/icons/arrow-down-sign-to-navigate.png"
+        width={30}
+        height={30}
+        alt="down"
+        className="  down-arrow bottom-5 absolute left-1/2"
+      />
     </section>
   );
 };
