@@ -2,19 +2,20 @@
   --primary-color: #8b0000;
   --secondary-color: #fff;
   --font-size: 12rem;
+  --text-box-width: 650px;
 }
 
 .my-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1d1d1d;
 }
 
 .text-box {
-  width: 650px;
+  width: var(--text-box-width);
   position: relative;
   height: 120px;
   font-family: "Trebuchet MS";
@@ -85,12 +86,41 @@
   left: 540px;
 }
 
+.infoslider {
+  --gap: 20px;
+  gap: var(--gap);
+  width: var(--text-box-width);
+  font-size: calc(var(--font-size) / 11);
+}
+
+.infoslider ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+.infoslider:hover ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --font-size: 5rem;
+    --text-box-width: 287px;
   }
   .text-box {
-    width: 287px;
+    width: var(--text-box-width);
     height: 50px;
   }
   .M {
